@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -6,7 +8,9 @@
 
 html{
   font-size: 10px;
-  font-family: 'Helvetica' 'Arial' sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: #dfdfdf;
+  font-weight: 300;
 }
 
 a{
@@ -14,11 +18,11 @@ a{
 }
 
 .container{
-  min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
 }
 
 img{
@@ -31,16 +35,17 @@ p{
   color: black;
   text-align: left;
   font-size: 1.4rem;
-  line-height: 1.9rem;
+  line-height: 2.5rem;
+  font-weight: 800;
 }
+
 .section-title{
-  font-size: 4rem;
+  padding-bottom: 3rem;
   font-weight: 300;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: .2rem;
   color: black;
-  margin-bottom: 10px;
 }
 .section-title span{
   color: crimson;
@@ -74,11 +79,12 @@ p{
 
 /* style for hero section */
 #hero{
-  background-image: url(./images/myface.jpg);
-  background-position: top left;
+  background-image: url(./images/desktop.jpg);
+  background-position: top left ;
   background-size: cover;
   position: relative;
   z-index: 1;
+  min-height: 100vh;
 }
 
 #hero::after{
@@ -89,7 +95,7 @@ p{
   height: 100%;
   width: 100%;
   background-color: black;
-  opacity: .7;
+  opacity: .9;
   z-index: -1;
 }
 
@@ -100,6 +106,54 @@ p{
   justify-content: flex-start;
 }
 
+#hero h3{
+  color: aliceblue;
+}
+.hero{
+  min-height: 100vh;
+}
+
+#hero .navbar{
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  margin: 0 auto;
+  width: 90%;
+  padding-top: 1rem;
+}
+
+#hero .navbar ul {
+  display: flex;
+  justify-content: space-around;
+  margin-left: auto;
+}
+
+#hero .navbar ul li a{
+  text-decoration: none;
+  padding-left: 2rem;
+  color: white;
+}
+#hero .navbar ul li a:hover{
+  color: crimson;
+}
+
+ #chevron{
+  float: right;
+  clear: left;
+  background-color: crimson;
+  position: absolute;
+  top: 80%;
+  left: 80%;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 4rem;
+  cursor: pointer;
+}
 #hero h1{
   display: block;
   width: fit-content;
@@ -156,8 +210,8 @@ p{
 }
 
 #services .service-top{
-  width: 500px;
-  margin: 0 auto;
+  
+  margin: 0 3rem;
   font-size: 1.4rem;
   line-height: 1.9rem;
 }
@@ -176,12 +230,24 @@ p{
   flex-direction: column;
   padding: 30px;
   border-radius: 10px;
-  background-image: url(./images/img2.png);
   background-size: cover;
   margin: 10px;
   position: relative;
   z-index: 1;
   overflow: hidden;
+}
+
+#services .service-item:first-child{
+  background-image: url(./images/html5.png);
+}
+#services .service-item:nth-child(2){
+  background-image: url(./images/css.png);
+}
+#services .service-item:nth-child(3){
+  background-image: url(./images/JavaScript-logo.png);
+}
+#services .service-item:last-child{
+  background-image: url(./images/react.png);
 }
 #services .service-item::after{
   content: '';
@@ -213,7 +279,7 @@ p{
 /* end of style for services section */
 
 /* style for projects section */
-#projects .projects{
+/* #projects .projects{
   flex-direction: column;
   text-align: center;
   max-width: 1200px;
@@ -284,7 +350,7 @@ p{
 }
 #projects .project-item:hover .project-img img{
   transform: scale(1.1);
-}
+} */
 
 /* end of style for projects section */
 
@@ -294,11 +360,11 @@ p{
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 20px;
+  padding: 0px 20px;
 }
 #about .col-left{
   width: 250px;
-  height: 340px;
+  height: 300px;
 
 }
 #about .col-right{
@@ -344,6 +410,7 @@ p{
   flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0;
 }
 #contact .contact-items{
   width: 400px;
@@ -408,11 +475,13 @@ p{
   width: 50px;
   margin: 0 5px;
 }
-#footer .social-item img{
+#footer .social-item i{
   filter: grayscale(1);
   transition: .3s ease filter;
+  padding-top: 1rem;
+  font-size: 3rem;
 }
-#footer .social-item:hover img{
+#footer .social-item:hover i{
   filter: grayscale(0);
 }
 #footer p{
